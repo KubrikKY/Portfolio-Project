@@ -1,0 +1,38 @@
+.Sidebar {
+  height: calc(100vh - var(--navbar-height));
+  width: var(--sidebar-width);
+  background: var(--inverted-bg-color);
+
+  position: relative;
+
+  transition: width 0.3s ease-out;
+}
+
+.Sidebar.collapsed {
+  width: var(--sidebar-width-collapsed);
+}
+
+.switchers {
+  position: absolute;
+
+  bottom: 30px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.burgerMenu {
+  width: 20px;
+  height: 20px;
+  object-fit: fill;
+  cursor: pointer;
+  fill: var(--bg-color);
+  stroke: var(--bg-color);
+  transform: rotate(0);
+
+  transition: transform 0.3s linear;
+
+  &:hover {
+    transform: rotate(180deg);
+  }
+}
