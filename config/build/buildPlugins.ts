@@ -4,6 +4,7 @@ import { BuildOptions } from './types/config';
 import webpack from 'webpack';
 
 export function buildPlugins({
+  isDev,
   paths,
 }: BuildOptions): webpack.WebpackPluginInstance[] {
   return [
@@ -15,5 +16,8 @@ export function buildPlugins({
       template: paths.html,
     }),
     new webpack.ProgressPlugin(),
+    new webpack.DefinePlugin({
+      __IS_DEV__: JSON.stringify(isDev),
+    }),
   ];
 }
