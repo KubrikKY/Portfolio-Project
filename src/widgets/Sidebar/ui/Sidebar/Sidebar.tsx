@@ -23,7 +23,7 @@ const Sidebar: FC<SidebarProps> = ({ className }) => {
       <BurgerMenu onClick={onToggle} className={style.burgerMenu} />
       <div className={style.switchers}>
         <ThemeSwitcher />
-        <LangSwitcher />
+        <LangSwitcher className={style.langSwitch} />
       </div>
     </div>
   );
